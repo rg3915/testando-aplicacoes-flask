@@ -12,6 +12,7 @@ Flask = "^1.1.2"
 pytest = "^6.2.1"
 pytest-flask = "^1.1.0"
 pytest-it = "^0.1.4"
+pytest-regressions = "^2.1.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

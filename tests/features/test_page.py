@@ -1,12 +1,13 @@
 from pytest import mark as m
 
+
 @m.it('deve retorna status code 200')
-def test_home_status_code(client):
+def test_home_status_code(client, data_regression):
     response = client.get('/')
-    assert response.status_code == 200
+    data_regression.check({'status_code': response.status_code})
+
 
 @m.it('deve conter ola mundo!')
-def test_home_ola_mundo(client):
+def test_home_ola_mundo(client, data_regression):
     response = client.get('/')
-    assert 'Olá, mundo!' in response.get_data(as_text=True)
-
+    data_regression.check(response.get_data(as_text=True))
